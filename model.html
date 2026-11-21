@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>3d-formbook</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script type="importmap">{ "imports": { "three": "./assets/vendor/three/three.module.js", "three/addons/": "./assets/vendor/three/addons/" } }</script>
+</head>
+<body>
+  <header class="site-head"><div class="wrap">
+    <a class="logo" href="./">3d-formbook</a>
+    <div class="lang" id="lang"></div>
+  </div></header>
+  <nav class="sub-nav"><div class="wrap" id="subnav"></div></nav>
+
+  <main class="wrap">
+    <section class="hero" id="hero"><div class="state" id="state"></div></section>
+    <div id="body"></div>
+  </main>
+
+  <footer class="site-foot"><div class="wrap"><span>3d-formbook</span><span id="foot"></span></div></footer>
+  <script type="module" src="assets/js/model.js"></script>
+</body>
+</html>

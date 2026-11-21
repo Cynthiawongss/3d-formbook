@@ -1,0 +1,70 @@
+{
+  "id": "orchid-ring",
+  "title": { "zh": "蝴蝶兰戒指", "en": "Phalaenopsis Ring" },
+  "category": "jewelry",
+  "version": "V4",
+  "updated": "2026-11-21",
+  "summary": {
+    "zh": "42 mm 蝴蝶兰花头 + 17 mm 戒圈，两件组装。V4 把花心居中并沿花面立起。",
+    "en": "A 42 mm phalaenopsis flower head with a 17 mm band, two pieces. V4 centres the column and stands it upright from the flower face."
+  },
+  "preview": {
+    "file": "files/ASSEMBLY_VIEW_ONLY.3mf",
+    "upAxis": "z",
+    "card": { "az": 0, "el": 68 },
+    "hero": { "az": 28, "el": 20, "fit": 0.82 }
+  },
+  "specs": [
+    { "label": { "zh": "花头", "en": "Flower" }, "value": "42", "unit": { "zh": "× 37.2 mm", "en": "× 37.2 mm" } },
+    { "label": { "zh": "戒圈内径", "en": "Band ID" }, "value": "17", "unit": { "zh": "mm · 试戴", "en": "mm · trial" } },
+    { "label": { "zh": "零件", "en": "Parts" }, "value": "2", "unit": { "zh": "件 · 插接", "en": "pcs · keyed" } },
+    { "label": { "zh": "切片预估", "en": "Slice est." }, "value": "54", "unit": { "zh": "分钟 · 4 g", "en": "min · 4 g" } }
+  ],
+  "print": {
+    "printer": "Bambu Lab A1",
+    "nozzle": "0.4 mm",
+    "material": { "zh": "透明 PETG", "en": "Clear PETG" },
+    "layer": "0.12 mm",
+    "status": {
+      "zh": "已切片、几何检查通过；V4 尚未实物打印验证。",
+      "en": "Sliced and geometry-checked; V4 not yet verified by a physical print."
+    }
+  },
+  "files": [
+    { "file": "files/Orchid_Ring_V4_A1_PETG_TRIAL.3mf", "label": { "zh": "打印工程 · A1 / PETG", "en": "Print project · A1 / PETG" } },
+    { "file": "files/Orchid_Ring_V4_GEOMETRY_ONLY.3mf", "label": { "zh": "几何模型（不含工艺）", "en": "Geometry only (no process)" } },
+    { "file": "files/01_Orchid_flower_42mm.stl", "label": { "zh": "花头", "en": "Flower head" } },
+    { "file": "files/02_Ring_ID17mm.stl", "label": { "zh": "戒圈 17 mm", "en": "Band 17 mm" } },
+    { "file": "files/ASSEMBLY_VIEW_ONLY.3mf", "label": { "zh": "组装参考（不用于打印）", "en": "Assembly reference (not for printing)" } },
+    { "file": "files/Petal_Test_V3_A1_PETG.3mf", "label": { "zh": "花瓣支撑小样 · V3", "en": "Petal support test · V3" } }
+  ],
+  "reusable": [
+    { "file": "files/01_Orchid_flower_42mm.stl", "name": { "zh": "蝴蝶兰花头", "en": "Orchid head" }, "note": { "zh": "背面带 6.4 mm 插槽", "en": "6.4 mm socket on back" } },
+    { "file": "files/02_Ring_ID17mm.stl", "name": { "zh": "带榫戒圈", "en": "Keyed band" }, "note": { "zh": "顶部 6 mm 定位榫", "en": "6 mm locating pin" } },
+    { "file": "source/generate_orchid.py", "name": { "zh": "建模源码", "en": "Model source" }, "note": { "zh": "Python · trimesh", "en": "Python · trimesh" } }
+  ],
+  "versions": [
+    { "v": "V4", "current": true, "note": { "zh": "花心居中、沿花面立起；唇瓣上收 70°", "en": "Column centred and upright; lip raised 70°" } },
+    { "v": "V3", "note": { "zh": "形状不变，调整支撑间隙以便拆除", "en": "Same shape, looser supports for easier removal" } },
+    { "v": "V2", "note": { "zh": "自由曲线花瓣、自然起伏（已实际打印）", "en": "Free-form petals with natural waves (printed)" } },
+    { "v": "V1", "note": { "zh": "初版：42 mm 花头 + 17 mm 戒圈", "en": "First take: 42 mm head + 17 mm band" } }
+  ],
+  "notes": {
+    "zh": [
+      "花头与戒圈分开打印，戒圈顶部的榫插入花背插槽，试配后用少量 PETG 适用胶固定。",
+      "V2 实物反馈：花瓣背面支撑粘得很牢。V3/V4 支撑顶部间隙 0.36 mm、接触层 2 层、XY 间隙 0.5 mm，属试验值。",
+      "17 mm 是试戴内径，不是测量过的个人尺寸。"
+    ],
+    "en": [
+      "Print the head and band separately; the band's pin slots into the socket on the back, then glue with a little PETG-safe adhesive.",
+      "V2 print feedback: supports stuck hard to the petal backs. V3/V4 use 0.36 mm top gap, 2 interface layers and 0.5 mm XY gap — still experimental.",
+      "17 mm is a trial size, not a measured personal fit."
+    ]
+  },
+  "images": [
+    { "file": "images/preview.png", "caption": { "zh": "整体", "en": "Overview" } },
+    { "file": "images/center_detail.png", "caption": { "zh": "花心", "en": "Column" } },
+    { "file": "images/front.png", "caption": { "zh": "正面", "en": "Front" } },
+    { "file": "images/side.png", "caption": { "zh": "侧面", "en": "Side" } }
+  ]
+}

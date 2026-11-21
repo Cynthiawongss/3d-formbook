@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>3d-formbook</title>
+  <meta name="description" content="3d-formbook — 我自己建模、自己打印的 3D 模型库 · A library of 3D models I designed and printed">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script type="importmap">{ "imports": { "three": "./assets/vendor/three/three.module.js", "three/addons/": "./assets/vendor/three/addons/" } }</script>
+</head>
+<body>
+  <header class="site-head"><div class="wrap">
+    <a class="logo" href="./">3d-formbook</a>
+    <div class="lang" id="lang"></div>
+  </div></header>
+
+  <main class="wrap">
+    <div class="page-title">
+      <div><h1 id="title"></h1><div class="count" id="count"></div></div>
+      <div class="seg" id="filters"></div>
+    </div>
+    <div class="grid" id="grid"><div class="loading s12"></div></div>
+  </main>
+
+  <footer class="site-foot"><div class="wrap"><span>3d-formbook</span><span id="foot"></span></div></footer>
+  <script type="module" src="assets/js/home.js"></script>
+</body>
+</html>

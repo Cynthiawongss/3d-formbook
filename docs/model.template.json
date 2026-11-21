@@ -1,0 +1,21 @@
+{
+  "id": "folder-name-here",
+  "title": { "zh": "中文名", "en": "English name" },
+  "category": "jewelry",
+  "version": "V1",
+  "updated": "2026-01-01",
+  "summary": { "zh": "一句话说明", "en": "One-line summary" },
+  "preview": { "file": "files/your-model.stl", "upAxis": "z", "card": { "az": 20, "el": 30 }, "hero": { "az": 25, "el": 25 } },
+  "specs": [
+    { "label": { "zh": "尺寸", "en": "Size" }, "value": "40", "unit": { "zh": "× 30 mm", "en": "× 30 mm" } }
+  ],
+  "files": [
+    { "file": "files/your-model.stl", "label": { "zh": "模型", "en": "Model" } }
+  ],
+  "reusable": [],
+  "versions": [
+    { "v": "V1", "current": true, "note": { "zh": "初版", "en": "First version" } }
+  ],
+  "notes": { "zh": ["笔记写在这里"], "en": ["Notes go here"] },
+  "images": []
+}

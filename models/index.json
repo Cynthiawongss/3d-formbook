@@ -1,0 +1,46 @@
+{
+  "generated": "2026-11-21T13:59:32.373Z",
+  "models": [
+    {
+      "id": "orchid-ring",
+      "title": {
+        "zh": "蝴蝶兰戒指",
+        "en": "Phalaenopsis Ring"
+      },
+      "category": "jewelry",
+      "version": "V4",
+      "updated": "2026-11-21",
+      "summary": {
+        "zh": "42 mm 蝴蝶兰花头 + 17 mm 戒圈，两件组装。V4 把花心居中并沿花面立起。",
+        "en": "A 42 mm phalaenopsis flower head with a 17 mm band, two pieces. V4 centres the column and stands it upright from the flower face."
+      },
+      "preview": {
+        "file": "files/ASSEMBLY_VIEW_ONLY.3mf",
+        "upAxis": "z",
+        "card": {
+          "az": 0,
+          "el": 68
+        },
+        "hero": {
+          "az": 28,
+          "el": 20,
+          "fit": 0.82
+        }
+      },
+      "cover": null,
+      "sizes": {
+        "files/ASSEMBLY_VIEW_ONLY.3mf": 2024765,
+        "files/Orchid_Ring_V4_A1_PETG_TRIAL.3mf": 3661321,
+        "files/Orchid_Ring_V4_GEOMETRY_ONLY.3mf": 2039300,
+        "files/01_Orchid_flower_42mm.stl": 7466584,
+        "files/02_Ring_ID17mm.stl": 912184,
+        "files/Petal_Test_V3_A1_PETG.3mf": 484702,
+        "images/preview.png": 471522,
+        "images/center_detail.png": 280896,
+        "images/front.png": 330041,
+        "images/side.png": 219482,
+        "source/generate_orchid.py": 5605
+      }
+    }
+  ]
+}
