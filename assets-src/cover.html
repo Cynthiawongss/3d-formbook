@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>3d-formbook cover</title>
+<!--
+  README cover in the site's own bento style. Every model in it is drawn by the site's renderer
+  (assets/js/render.js) from the real files in models/orchid-ring/, the same way the library cards are.
+  Render (serve the repository root on :8012 first, e.g. python3 -m http.server 8012):
+    node <repo-introduction>/scripts/shoot.mjs --url "http://127.0.0.1:8012/assets-src/cover.html" \
+      --out docs/cover.png --size 1920x1080 --scale 1 --until "window.coverReady" --timeout 120000
+-->
+<link rel="stylesheet" href="../assets/css/style.css">
+<script type="importmap">{ "imports": { "three": "../assets/vendor/three/three.module.js", "three/addons/": "../assets/vendor/three/addons/" } }</script>
+<style>
+  html, body { width: 1920px; height: 1080px; overflow: hidden; background: var(--bg); }
+  #stage { position: relative; width: 1920px; height: 1080px; overflow: hidden; }
+  .abs { position: absolute; }
+  .brand { font-size: 26px; font-weight: 600; letter-spacing: -.01em; }
+  h1 { font-size: 74px; font-weight: 600; letter-spacing: -.035em; line-height: 1.02; }
+  .zh { font-size: 34px; font-weight: 500; color: var(--mute); letter-spacing: -.01em; }
+  .lead { font-size: 23px; line-height: 1.5; color: #424245; }
+  .c { background: var(--card); border-radius: 30px; overflow: hidden; }
+  .c img.r { position: absolute; display: block; }
+  .big h3 { position: absolute; left: 0; right: 0; top: 44px; text-align: center; font-size: 46px; font-weight: 600; letter-spacing: -.02em; }
+  .big p { position: absolute; left: 0; right: 0; top: 104px; text-align: center; font-size: 22px; color: var(--mute); }
+  .big .meta { position: absolute; z-index: 2; left: 0; right: 0; bottom: 26px; text-align: center; font-size: 15px; color: var(--mute); }
+  .tile { padding: 22px 26px; border-radius: 26px; }
+  .tile small { font-size: 16px; }
+  .tile .n { font-size: 50px; margin-top: 4px; }
+  .tile .n span { font-size: 20px; }
+  .part .name { position: absolute; left: 0; right: 0; bottom: 48px; text-align: center; font-size: 19px; font-weight: 500; }
+  .part .note { position: absolute; left: 0; right: 0; bottom: 24px; text-align: center; font-size: 14px; color: var(--mute); }
+  .part .k { position: absolute; left: 26px; top: 22px; font-size: 14px; color: var(--mute); }
+  .vers { padding: 24px 28px; }
+  .vers h4 { font-size: 19px; font-weight: 600; display: flex; justify-content: space-between; margin-bottom: 8px; }
+  .vers h4 span { font-size: 14px; color: var(--mute); font-weight: 400; }
+  .vers .ver { font-size: 15px; padding: 9px 0; grid-template-columns: 38px 1fr; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div class="abs brand" style="left:80px; top:74px">3d-formbook</div>
+  <h1 class="abs" style="left:76px; top:150px">A library of<br>models I design<br>and print.</h1>
+  <div class="abs zh" style="left:80px; top:396px">自己建模、自己打印的模型库</div>
+  <div class="abs lead" style="left:80px; top:474px; width:540px">Each model keeps its files, reusable parts, versions and what the last print taught.</div>
+
+  <div class="abs tile c" style="left:80px; top:700px; width:270px; height:141px"><small>Flower</small><div class="n">42<span>× 37.2 mm</span></div></div>
+  <div class="abs tile c" style="left:370px; top:700px; width:270px; height:141px"><small>Band ID</small><div class="n">17<span>mm · trial</span></div></div>
+  <div class="abs tile c" style="left:80px; top:861px; width:270px; height:141px"><small>Parts</small><div class="n">2<span>pcs · keyed</span></div></div>
+  <div class="abs tile c" style="left:370px; top:861px; width:270px; height:141px"><small>Slice est.</small><div class="n">54<span>min · 4 g</span></div></div>
+
+  <div class="abs c big" id="big" style="left:680px; top:78px; width:1160px; height:620px">
+    <h3>Phalaenopsis Ring</h3><p>蝴蝶兰戒指</p>
+    <div class="meta">V4 · Jewelry</div>
+  </div>
+
+  <div class="abs c part" id="head" style="left:680px; top:718px; width:370px; height:284px">
+    <div class="k">Reusable part</div><div class="name">Orchid head</div><div class="note">6.4 mm socket on back</div>
+  </div>
+  <div class="abs c part" id="band" style="left:1070px; top:718px; width:370px; height:284px">
+    <div class="k">Reusable part</div><div class="name">Keyed band</div><div class="note">6 mm locating pin</div>
+  </div>
+  <div class="abs c vers" style="left:1460px; top:718px; width:380px; height:284px">
+    <h4>Versions<span>V4</span></h4>
+    <div class="ver"><b>V4</b><span>Column centred and upright<span class="now">Current</span></span></div>
+    <div class="ver"><b>V3</b><span>Looser supports</span></div>
+    <div class="ver"><b>V2</b><span>Free-form petals (printed)</span></div>
+    <div class="ver"><b>V1</b><span>42 mm head + 17 mm band</span></div>
+  </div>
+</div>
+<script type="module">
+import { loadModel, renderStill } from '../assets/js/render.js';
+const M = '../models/orchid-ring/files/';
+const S = 2; // render at 2x and show at 1x, for clean edges
+
+async function place(id, file, box, view) {
+  const model = await loadModel(M + file, { upAxis: 'z' });
+  const img = new Image();
+  img.className = 'r';
+  img.src = renderStill(model, { width: box.w * S, height: box.h * S, ...view });
+  Object.assign(img.style, { left: box.x + 'px', top: box.y + 'px', width: box.w + 'px', height: box.h + 'px' });
+  await img.decode();
+  document.getElementById(id).appendChild(img);
+}
+
+await place('big', 'ASSEMBLY_VIEW_ONLY.3mf', { x: 0, y: 120, w: 1160, h: 500 }, { az: 28, el: 22, fit: 0.62 });
+await place('head', '01_Orchid_flower_42mm.stl', { x: 20, y: 44, w: 330, h: 176 }, { az: 15, el: 40, fit: 0.72 });
+await place('band', '02_Ring_ID17mm.stl', { x: 20, y: 44, w: 330, h: 176 }, { az: 15, el: 40, fit: 0.72 });
+await document.fonts.ready;
+window.coverReady = true;
+</script>
+</body>
+</html>

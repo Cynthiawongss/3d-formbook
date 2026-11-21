@@ -1,0 +1,62 @@
+{
+  "defaults": {
+    "size": "1440x1000",
+    "scale": 2,
+    "lang": "en-US",
+    "timeout": 90000,
+    "stillTimeout": 15000,
+    "wait": 1500,
+    "setup": "localStorage.setItem('3d-formbook-lang','en')"
+  },
+  "shots": [
+    {
+      "url": "http://127.0.0.1:8012/",
+      "out": "../docs/01-library.jpg",
+      "until": "document.querySelector('.card .shot img')"
+    },
+    {
+      "url": "http://127.0.0.1:8012/model.html?id=orchid-ring",
+      "out": "../docs/02-model.jpg",
+      "until": "!document.getElementById('state') && document.getElementById('modes')",
+      "log": "[...document.querySelectorAll('#parts button')].map(b=>b.dataset.p+':'+b.textContent).join(' | ')"
+    },
+    {
+      "url": "http://127.0.0.1:8012/model.html?id=orchid-ring",
+      "out": "../docs/03-record.jpg",
+      "full": true,
+      "until": "!document.getElementById('state') && document.getElementById('modes') && document.querySelector('.parts .pic img')",
+      "clip": {
+        "x": 0,
+        "y": 905,
+        "width": 1440,
+        "height": 820
+      }
+    },
+    {
+      "url": "http://127.0.0.1:8012/model.html?id=orchid-ring",
+      "out": "../docs/04-wire.jpg",
+      "until": "!document.getElementById('state') && document.getElementById('modes') && document.querySelector('.parts .pic img')",
+      "steps": [
+        {
+          "until": "!document.getElementById('state') && document.getElementById('modes') && document.querySelector('.parts .pic img')"
+        },
+        {
+          "click": "#modes button[data-m=wire]"
+        },
+        {
+          "wait": 1500
+        },
+        "window.scrollTo(0,0)",
+        {
+          "wait": 500
+        }
+      ],
+      "clip": {
+        "x": 40,
+        "y": 127,
+        "width": 1360,
+        "height": 640
+      }
+    }
+  ]
+}
